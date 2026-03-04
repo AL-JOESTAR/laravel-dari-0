@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    Quote
+    aman aja
   </div>
   <div class="card-body">
     <figure>

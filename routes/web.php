@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,4 +19,7 @@ Route::get('/about/{id}', function(){
     return view('pages.product');
 });
 Route::view('/beranda','pages.beranda');
-Route::view('/product', 'pages.product');
+
+//satu controller bisa punya banyak method
+Route::get('/product',[ProductController::class, 'index']);
+Route::get('/product/tambah',[ProductController::class, 'tambah']);

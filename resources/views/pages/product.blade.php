@@ -2,7 +2,14 @@
 
 @section('konten')
 <hr>  
-<button type="button" class="btn btn-primary mb-3">Tambah data</button>
+<a href ='/product/tambah' type="button" class="btn btn-primary mb-3">Tambah data</a>
+<div class='alert alert-primary'>
+  <b>Nama Toko : </b> {{$nama_toko}}
+  <br>
+  <b>Alamat Toko : </b> {{$alamat}}
+  <br>
+  <b>Tipe toko : </b> {{$type}}
+</div>
 <div class="alert alert-primary" role="alert">
   <div class = 'card'>
    <div class = "card-header">
