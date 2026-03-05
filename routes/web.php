@@ -16,10 +16,10 @@ Route::get('/about', function () {
 });
 
 Route::get('/about/{id}', function(){
-    return view('pages.product');
+    return view('pages.product.show');
 });
 Route::view('/beranda','pages.beranda');
 
 //satu controller bisa punya banyak method
-Route::get('/product',[ProductController::class, 'index']);
+Route::get('/product',[ProductController::class, 'index']); //read data
 Route::get('/product/tambah',[ProductController::class, 'tambah']);

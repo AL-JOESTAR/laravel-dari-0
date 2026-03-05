@@ -20,6 +20,12 @@ class ProductSeeder extends Seeder
             'deskripsi_product' => 'test deskripsi',
             'kategori_id' => 2,
             'created_at'=>now()
+            ],[
+            'nama_product' => 'bahlil iol',
+            'harga' => 1000,
+            'deskripsi_product' => 'test deskripsi',
+            'kategori_id' => 2,
+            'created_at'=>now()
             ]
         ]);
     }

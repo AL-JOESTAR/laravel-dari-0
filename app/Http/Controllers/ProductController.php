@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -12,7 +14,14 @@ class ProductController extends Controller
             'alamat' => 'jl.Ambarawa',
             'type' => 'ruko',
         ];
-       return view ('pages.product', $data_toko); // atau bisapakai compact (('data_toko')) dankalau maumunculin : {{$data_toko['nama_toko']}}
+        // return view ('pages.product.show', $data_toko); // atau bisapakai compact (('data_toko')) dankalau maumunculin : {{$data_toko['nama_toko']}}
+        
+        $data_product = Product::get(); //eloquent query mengambil semua data yang berada di tabel product
+        // $queryBuilder = DB::table('tb_products')->get(); //query mengambil semua data dalam tabel produk
+        return view ('pages.product.show', [
+            'data_toko' => $data_toko,
+            'data_product' => $data_product,
+        ]); // atau bisapakai compact (('data_toko')) dankalau maumunculin : {{$data_toko['nama_toko']}}
     }
 
     public function tambah(){

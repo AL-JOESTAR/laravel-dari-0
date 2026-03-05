@@ -1,14 +1,13 @@
 @extends('layouts.master')
 
-@section('konten')
-<hr>  
+@section('konten')  
 <a href ='/product/tambah' type="button" class="btn btn-primary mb-3">Tambah data</a>
 <div class='alert alert-primary'>
-  <b>Nama Toko : </b> {{$nama_toko}}
+  <b>Nama Toko : </b> {{$data_toko['nama_toko']}}
   <br>
-  <b>Alamat Toko : </b> {{$alamat}}
+  <b>Alamat Toko : </b> {{$data_toko['alamat']}}
   <br>
-  <b>Tipe toko : </b> {{$type}}
+  <b>Tipe toko : </b> {{$data_toko['type']}}
 </div>
 <div class="alert alert-primary" role="alert">
   <div class = 'card'>
@@ -26,42 +25,22 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>minyak</td>
-      <td>24</td>
-      <td>67000</td>
+      @foreach ($data_product as $item)
+      <tr>
+      <th scope="row">{{$loop->iteration}}</th>
+      <td>{{$item->nama_product}}</td>
+      <td>{{$item->deskripsi_product}}</td>
+      <td>{{$item->harga}}</td>
       <td>
         <button type="button" class="btn btn-danger">Hapus</button>
         <button type="button" class="btn btn-warning">Edit</button>
       </td>
     </tr>
+      @endforeach
 
-          <tr>
-      <th scope="row">1</th>
-      <td>minyak</td>
-      <td>24</td>
-      <td>67000</td>
-      <td>
-        <button type="button" class="btn btn-danger">Hapus</button>
-        <button type="button" class="btn btn-warning">Edit</button>
-      </td>
-    </tr>
-
-        <tr>
-      <th scope="row">1</th>
-      <td>minyak</td>
-      <td>24</td>
-      <td>67000</td>
-      <td>
-        <button type="button" class="btn btn-danger">Hapus</button>
-        <button type="button" class="btn btn-warning">Edit</button>
-      </td>
-    </tr>
   </tbody>
 </table>
   </div>
   </div>
-
   
 @endsection

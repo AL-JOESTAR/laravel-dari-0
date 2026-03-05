@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //inisialisasi tabel
-    protected $table = 'tb_product';
+    protected $table = 'tb_products';
 
     //inisialisasi promarykeydaam tabel
     protected $primarykey = 'id_prodcut';
