@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama_product', 150); //default length 255
             $table->integer('harga');
             $table->text('deskripsi_product');
-            $table->integer('kategor_id');
+            $table->integer('kategori_id');
             $table->timestamps();
         });
     }
