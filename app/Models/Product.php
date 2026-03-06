@@ -16,6 +16,6 @@ class Product extends Model
     // protected $fillable = ['nama_product','harga','stock'];
 
     //inisialisasi data apa saja yang tidak boleh di isi
-    protected $guraded = ['id_product'];
+    protected $guarded = ['id_product'];
 
 }

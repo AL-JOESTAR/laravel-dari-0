@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('konten')  
-<a href ='/product/tambah' type="button" class="btn btn-primary mb-3">Tambah data</a>
+<a href ='/product/create' type="button" class="btn btn-primary mb-3">Tambah data</a>
 <div class='alert alert-primary'>
   <b>Nama Toko : </b> {{$data_toko['nama_toko']}}
   <br>
@@ -9,6 +9,11 @@
   <br>
   <b>Tipe toko : </b> {{$data_toko['type']}}
 </div>
+@if(session('pesan'))
+  <div class="alert alert-primary">
+    {{session('pesan')}}
+  </div>
+@endif
 <div class="alert alert-primary" role="alert">
   <div class = 'card'>
    <div class = "card-header">

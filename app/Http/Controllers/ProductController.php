@@ -21,10 +21,30 @@ class ProductController extends Controller
         return view ('pages.product.show', [
             'data_toko' => $data_toko,
             'data_product' => $data_product,
-        ]); // atau bisapakai compact (('data_toko')) dankalau maumunculin : {{$data_toko['nama_toko']}}
+        ]);
     }
 
-    public function tambah(){
-        return view ('pages.addProduct');
+    public function create(){
+        return view ('pages.product.add');
+    }
+
+    public function store(Request $request){
+        //validasi
+        $request->validate([
+            'nama_product' => 'required',
+            'harga' => 'required',
+            'deskripsi_product' =>  'required',
+        ]);
+
+        //query tambah data
+        Product::create([
+            'nama_product'=>$request->nama_product,
+            'harga'=>$request->harga,
+            'deskripsi_product'=>$request->deskripsi_product,
+            'kategori_id'=>'1',
+        ]);
+
+        //setelah daa berhasil ditambah
+        return redirect('/product')->with('pesan', 'berhasil menambah data');
     }
 }
