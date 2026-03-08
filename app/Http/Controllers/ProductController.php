@@ -31,16 +31,21 @@ class ProductController extends Controller
     public function store(Request $request){
         //validasi
         $request->validate([
-            'nama_product' => 'required',
-            'harga' => 'required',
-            'deskripsi_product' =>  'required',
+            'nama' => 'required|min:8',
+            'hargap' => 'required',
+            'deskripsip' =>  'required',
+        ],[
+            'nama.min'=>'nama harus minimal 8 karakter',
+            'nama.required' => 'nama product wajib di isi',
+            'hargap.required'=>'harga tidak boleh 0',
+            'deskripsip.required' => 'deskripsi tidak boleh kosong',
         ]);
 
         //query tambah data
         Product::create([
-            'nama_product'=>$request->nama_product,
-            'harga'=>$request->harga,
-            'deskripsi_product'=>$request->deskripsi_product,
+            'nama_product'=>$request->nama,
+            'harga'=>$request->hargap,
+            'deskripsi_product'=>$request->deskripsip,
             'kategori_id'=>'1',
         ]);
 
