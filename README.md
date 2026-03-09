@@ -1,4 +1,4 @@
-### Yang saya pelajari
+## Yang saya pelajari
 
 -Route
 -view
@@ -8,6 +8,6 @@
 -method
 -compact
 
-## CRUD
+### CRUD
 -Create
 -Read
