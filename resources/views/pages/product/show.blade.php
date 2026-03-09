@@ -39,6 +39,7 @@
       <td>
         <button type="button" class="btn btn-danger">Hapus</button>
         <button type="button" class="btn btn-warning">Edit</button>
+        <a href="/product/{{$item->id_product}}" class="btn btn-primary">Detail</button>
       </td>
     </tr>
       @endforeach

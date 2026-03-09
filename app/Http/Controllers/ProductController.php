@@ -52,4 +52,13 @@ class ProductController extends Controller
         //setelah daa berhasil ditambah
         return redirect('/product')->with('pesan', 'berhasil menambah data');
     }
+
+    Public function show($id){
+        //untuk elequent or
+        $data = Product::findOrFail($id);
+
+        Return view('pages.product.detail',[
+            'product' => $data,
+        ]);
+    }
 }

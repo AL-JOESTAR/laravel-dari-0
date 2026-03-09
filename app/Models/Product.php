@@ -10,7 +10,7 @@ class Product extends Model
     protected $table = 'tb_products';
 
     //inisialisasi promarykeydaam tabel
-    protected $primarykey = 'id_prodcut';
+    protected $primaryKey = 'id_product';
 
     //mengatur atau menentukan satu per satu kolom yang bisa di isi
     // protected $fillable = ['nama_product','harga','stock'];
