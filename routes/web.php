@@ -36,3 +36,6 @@ Route::get('/product/{id}', [ProductController::class, 'show']);
 //update
 Route::get('/product/{id}/edit', [ProductController::class, 'edit']);
 Route::put('/product/{id}', [ProductController::class, 'update']);
+
+//Delete
+Route::delete('product/{id}', [ProductController::class, 'destroy']);

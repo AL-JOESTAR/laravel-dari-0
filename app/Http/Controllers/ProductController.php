@@ -92,4 +92,9 @@ class ProductController extends Controller
 
         return redirect ('/product')->with('pesan', 'berhasil update data');
     }
+
+    public function destroy($id,){
+        Product::findOrFail($id)->delete();
+        return redirect ('/product')->with('pesan', "data berhasil dihapus");
+    }
 }

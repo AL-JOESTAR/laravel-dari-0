@@ -11,3 +11,5 @@
 ### CRUD
 -Create
 -Read
+-Edit
+-Delete
