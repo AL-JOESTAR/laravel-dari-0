@@ -25,7 +25,14 @@ Route::view('/beranda','pages.beranda');
 
 //satu controller bisa punya banyak method
 Route::get('/product',[ProductController::class, 'index']); //read data
-Route::get('/product/create',[ProductController::class, 'create']); //menampilkan halaman form data
 
+//create
+Route::get('/product/create',[ProductController::class, 'create']); //menampilkan halaman form data
 Route::post('/product',[ProductController::class, 'store']); //untuk mengelola data yang telah dikirim dari form data
+
+//read
 Route::get('/product/{id}', [ProductController::class, 'show']);
+
+//update
+Route::get('/product/{id}/edit', [ProductController::class, 'edit']);
+Route::put('/product/{id}', [ProductController::class, 'update']);
