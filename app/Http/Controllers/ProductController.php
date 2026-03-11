@@ -8,15 +8,23 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $data_toko = [
             'nama_toko' => 'Tokopakedi',
             'alamat' => 'jl.Ambarawa',
             'type' => 'ruko',
         ];
         // return view ('pages.product.show', $data_toko); // atau bisapakai compact (('data_toko')) dankalau maumunculin : {{$data_toko['nama_toko']}}
+ 
+
+        $search = $request->keyword;
+
+        $data_product = Product::when($search, function($query,$search){
+            return $query->where('nama_product','like', "%{$search}%");
+        })->get();  //searching dengan nama product
         
-        $data_product = Product::get(); //eloquent query mengambil semua data yang berada di tabel product
+        
+        //eloquent query mengambil semua data yang berada di tabel product
         // $queryBuilder = DB::table('tb_products')->get(); //query mengambil semua data dalam tabel produk
         return view ('pages.product.show', [
             'data_toko' => $data_toko,
@@ -29,7 +37,7 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-        //validasi
+        //validasi form
         $request->validate([
             'nama' => 'required|min:8',
             'hargap' => 'required',

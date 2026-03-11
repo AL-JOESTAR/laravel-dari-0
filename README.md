@@ -29,6 +29,7 @@ Project ini menggunakan Laravel tanpa tambahan package eksternal (pure Laravel) 
 * Read data
 * Update data
 * Delete data
+* Search data
 
 ## Teknologi
 

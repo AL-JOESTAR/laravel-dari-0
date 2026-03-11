@@ -16,8 +16,14 @@
 @endif
 <div class="alert alert-primary" role="alert">
   <div class = 'card'>
-   <div class = "card-header">
+   <div class = "card-header d-flex justify-content-between align-item-center">
     produk kita gess
+
+    <form class="input-group" style="width: 350px">
+      <input type="text" class="form-control" name= "keyword" placeholder="Cari data produk">
+      <button class="btn btn-success" type="submit" id="button-addon2">Cari Data</button>
+    </form>
+
    </div> 
   <table class="table table-striped table-bordered">
   <thead>
