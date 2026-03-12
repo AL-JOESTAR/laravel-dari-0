@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\KategoriController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,3 +40,6 @@ Route::put('/product/{id}', [ProductController::class, 'update']);
 
 //Delete
 Route::delete('product/{id}', [ProductController::class, 'destroy']);
+
+//routing menggunakan resource CRUD jadi lebih gampang bree
+Route::resource('/kategori', KategoriController::class);

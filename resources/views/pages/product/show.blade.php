@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('konten')  
+<hr>
 <a href ='/product/create' type="button" class="btn btn-primary mb-3">Tambah data</a>
 <div class='alert alert-primary'>
   <b>Nama Toko : </b> {{$data_toko['nama_toko']}}

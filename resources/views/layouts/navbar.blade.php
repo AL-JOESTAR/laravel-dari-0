@@ -9,6 +9,7 @@
         <a class="nav-link" aria-current="page" href="/beranda">beranda</a>
         <a class="nav-link" href="/about">about</a>
         <a class="nav-link" href="/product">product</a>
+        <a class="nav-link" href="/kategori">Kategori</a>
       </div>
     </div>
   </div>
