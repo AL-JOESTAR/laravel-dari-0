@@ -25,6 +25,30 @@
                   <div id="emailHelp" class="form-text text-danger">{{$message}}</div>
                  @enderror
               </div>
+
+              <div class="col-sm-6">
+              <div class="mb-3">
+                <label class="form-label">Kategori</label>
+                <select class="form-select" aria-label="Default select example" name="kategori">
+                    <option value="">pilih kategori</option>
+                    @foreach ($data as $item)
+                    <option value="{{$item->id_kategori}}">{{$item -> nama_kategori}}</option>
+                    @endforeach
+                </select>
+                 @error('Kategori')
+                  <div id="emailHelp" class="form-text text-danger">{{$message}}</div>
+                 @enderror
+              </div>
+
+              <div class="col-sm-6">
+              <div class="mb-3">
+                <label class="form-label">stock</label>
+                <input type="number" name="stock" class="form-control" value="{{old ('stock')}}">
+                 @error('stock')
+                  <div id="emailHelp" class="form-text text-danger">{{$message}}</div>
+                 @enderror
+              </div>
+
             <div class="col-12">
               <label>Deskripsi</label>
               <div class="form-floating">

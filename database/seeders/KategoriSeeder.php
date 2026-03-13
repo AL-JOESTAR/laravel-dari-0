@@ -14,11 +14,5 @@ class KategoriSeeder extends Seeder
     public function run(): void
     {
         //kategori seeder
-
-        DB::table('tb_kategori')->insert([
-            ['nama_kategori' => 'elektronik',
-              'deskripsi' => 'elektronik wowo',
-            ],
-        ]);
     }
 }

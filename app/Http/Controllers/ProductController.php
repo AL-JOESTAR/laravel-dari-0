@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Kategori;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -21,7 +23,9 @@ class ProductController extends Controller
 
         $data_product = Product::when($search, function($query,$search){
             return $query->where('nama_product','like', "%{$search}%");
-        })->get();  //searching dengan nama product
+        })
+        ->join('tb_kategori', 'tb_products.kategori_id', '=','tb_kategori.id_kategori')
+        ->get();  //searching dengan nama product
         
         
         //eloquent query mengambil semua data yang berada di tabel product
@@ -33,7 +37,10 @@ class ProductController extends Controller
     }
 
     public function create(){
-        return view ('pages.product.add');
+        $data_kategori = Kategori::get();
+        return view ('pages.product.add', [
+            'data' => $data_kategori,
+        ]);
     }
 
     public function store(Request $request){
@@ -42,6 +49,8 @@ class ProductController extends Controller
             'nama' => 'required|min:8',
             'hargap' => 'required',
             'deskripsip' =>  'required',
+            'stock' => 'required',
+            'kategori' => 'required',
         ],[
             'nama.min'=>'nama harus minimal 8 karakter',
             'nama.required' => 'nama product wajib di isi',
@@ -51,10 +60,12 @@ class ProductController extends Controller
 
         //query tambah data
         Product::create([
+            'kode_product' => Str::random(10),
             'nama_product'=>$request->nama,
             'harga'=>$request->hargap,
             'deskripsi_product'=>$request->deskripsip,
-            'kategori_id'=>'1',
+            'kategori_id'=>$request->kategori,
+            'stock'=>$request->stock,
         ]);
 
         //setelah daa berhasil ditambah
@@ -73,9 +84,11 @@ class ProductController extends Controller
     public function edit($id){
          //mengirimkan 1 data spesifik dari id yang dikirimkan parameter
         $data = Product::findOrFail($id);
+        $data_kategori = Kategori::get();
 
         return view('pages.product.edit', [
             'data'=>$data,
+            'kategori' => $data_kategori
         ]);
     }
 
@@ -96,6 +109,8 @@ class ProductController extends Controller
             'nama_product'=>$request->nama,
             'harga'=>$request->hargap,
             'deskripsi_product'=>$request->deskripsip,
+            'kategori_id'=>$request->kategori,
+            'stock'=>$request->stock,
         ]);
 
         return redirect ('/product')->with('pesan', 'berhasil update data');

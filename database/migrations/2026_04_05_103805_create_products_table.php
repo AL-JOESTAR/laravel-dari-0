@@ -14,11 +14,16 @@ return new class extends Migration
         //syntax laravel untuk membuat tabel produk
         Schema::create('tb_products', function (Blueprint $table) {
             $table->id('id_product'); //default id
+            $table->string('kode_product')->unique();
             $table->string('nama_product', 150); //default length 255
-            $table->integer('harga');
+            $table->bigInteger('harga');
             $table->text('deskripsi_product');
-            $table->integer('kategori_id');
+            $table->integer('stock');
+            $table->string('gambar')->nullable();
+            $table->unsignedBigInteger('kategori_id');
             $table->timestamps();
+
+            $table->foreign('kategori_id')->references('id_kategori')->on('tb_kategori')->onDelete('cascade');
         });
     }
 
