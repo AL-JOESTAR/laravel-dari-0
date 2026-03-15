@@ -43,3 +43,5 @@ Route::delete('product/{id}', [ProductController::class, 'destroy']);
 
 //routing menggunakan resource CRUD jadi lebih gampang bree
 Route::resource('/kategori', KategoriController::class);
+
+Route::get('/login', fn() => view('auth.login'))->name('login');
