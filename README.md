@@ -41,4 +41,5 @@ Project ini menggunakan Laravel tanpa tambahan package eksternal (pure Laravel) 
 Project ini dibuat untuk latihan memahami fundamental Laravel sebelum menggunakan package tambahan seperti Filament atau package lainnya.
 
 ## References
+https://youtube.com/playlist?list=PLPqeNG7ba3a_Sz3tJ1YukfqHE5jZGBmHn&si=NnEcDC5qoXL6Apwn
 https://youtube.com/playlist?list=PLBs-bxLCgCx-emg0XfU2AXDCsjyppJmFY&si=hB_WTggw2qqSPPUc
