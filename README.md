@@ -22,6 +22,7 @@ Project ini menggunakan Laravel tanpa tambahan package eksternal (pure Laravel) 
 * Compact Function
 * Migration
 * Seeder (Data dummy)
+* Auth
 
 ## Fitur
 
@@ -30,7 +31,8 @@ Project ini menggunakan Laravel tanpa tambahan package eksternal (pure Laravel) 
 * Update data
 * Delete data
 * Search data
-
+* login
+* logout
 ## Teknologi
 
 * Laravel
