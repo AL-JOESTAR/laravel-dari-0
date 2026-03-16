@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">ini navbar</a>
+    <a class="navbar-brand">ini navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,6 +10,7 @@
         <a class="nav-link" href="/about">about</a>
         <a class="nav-link" href="/product">product</a>
         <a class="nav-link" href="/kategori">Kategori</a>
+        <a href="/login" type="button" class="btn btn-danger">logout</a>
       </div>
     </div>
   </div>

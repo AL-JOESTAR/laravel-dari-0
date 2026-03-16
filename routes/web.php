@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 // Route::get('/about', function () {
@@ -16,6 +17,10 @@ Route::get('/', function () {
 //     ];
 //     return view('pages.about', $data);
 // });
+
+Route::get('/dashboard', function () {
+    return view('welcome');
+});
 
 Route::get('/about',[AboutController::class, 'index']);
 
@@ -45,3 +50,4 @@ Route::delete('product/{id}', [ProductController::class, 'destroy']);
 Route::resource('/kategori', KategoriController::class);
 
 Route::get('/login', fn() => view('auth.login'))->name('login');
+Route::post('/login', [AuthController::class, 'login']);
