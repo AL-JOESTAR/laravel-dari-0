@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -18,9 +19,9 @@ Route::get('/', function () {
 //     return view('pages.about', $data);
 // });
 
-Route::get('/dashboard', function () {
-    return view('welcome');
-});
+// Route::get('/dashboard', function () {
+//     return view('welcome');
+// });
 
 Route::get('/about',[AboutController::class, 'index']);
 
@@ -51,3 +52,15 @@ Route::resource('/kategori', KategoriController::class);
 
 Route::get('/login', fn() => view('auth.login'))->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::group(['middleware' => ['auth', 'check_role:admin,staff']], function(){
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+});
+
+Route::group(['middleware' => ['auth', 'check_role:admin']], function(){
+    Route::get('/info', fn()=> "halaman customer" );
+});
+
+Route::group(['middleware' => ['auth', 'check_role:customer']], function(){
+    Route::get('/customer', fn()=> "halaman customer");
+});

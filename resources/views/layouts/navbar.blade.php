@@ -11,6 +11,10 @@
         <a class="nav-link" href="/product">product</a>
         <a class="nav-link" href="/kategori">Kategori</a>
         <a href="/login" type="button" class="btn btn-danger">logout</a>
+
+        @if(auth()->user()->role == 'admin')
+        <a href="/info" type="button" class="btn btn-success">info admin</a>
+        @endif
       </div>
     </div>
   </div>

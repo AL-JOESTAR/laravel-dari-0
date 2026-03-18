@@ -16,6 +16,7 @@ class AuthController extends Controller
         ]);
 
         if(Auth::attempt($request->only('email', 'password'), $request->remember)){
+            if(Auth::user()->role == 'customer') return redirect ('/customer');
             return redirect('/dashboard');
         }
         return back()->with('failed', 'email atau password salah');
