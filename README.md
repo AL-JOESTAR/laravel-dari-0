@@ -8,6 +8,7 @@ Project ini menggunakan Laravel tanpa tambahan package eksternal (pure Laravel) 
 * Memahami struktur project Laravel
 * Memahami konsep MVC (Model-View-Controller)
 * Melatih implementasi CRUD menggunakan Laravel
+* Melatih implementasi Authentication & Authorization
 
 ## Yang Dipelajari
 
