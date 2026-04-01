@@ -50,9 +50,13 @@ Project ini dibuat untuk latihan memahami fundamental Laravel sebelum menggunaka
 </p>
 
 ### Dashboard
-
 <p>
     <img src="ReadmeAsset/Dashboard.png"> 
+</p>
+
+### CRUD Page
+<p>
+    <img src="ReadmeAsset/CRUD.png"> 
 </p>
 
 ## References
