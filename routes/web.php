@@ -58,7 +58,7 @@ Route::group(['middleware' => ['auth', 'check_role:admin,staff']], function(){
 });
 
 Route::group(['middleware' => ['auth', 'check_role:admin']], function(){
-    Route::get('/info', fn()=> "halaman customer" );
+    Route::get('/info', fn()=> "halaman admin" );
 });
 
 Route::group(['middleware' => ['auth', 'check_role:customer']], function(){
