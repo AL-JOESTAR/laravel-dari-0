@@ -18,9 +18,12 @@ class ProductSeeder extends Seeder
             [
             'nama_kategori' => 'minyak',
             'deskripsi' => 'minyak asli bree',
-            ],            [
+            ],[
             'nama_kategori' => 'code',
             'deskripsi' => 'code asli cuma disini',
+            ],[
+            'nama_kategori' => 'periode',
+            'deskripsi' => '2 periode',
             ],
         ]);
         DB::table('tb_products')->insert([
